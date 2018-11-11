@@ -17,6 +17,8 @@ services:
 
   worker:
     build: ./worker
+    environment:      
+      - "ConnectionStrings:VoteData=Server=db;Port=3306;Database=votes;User=root;SslMode=None"
     depends_on:
       - redis
       - db
