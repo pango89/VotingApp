@@ -18,4 +18,5 @@ services:
 
   db:
     image: mysql/mysql-server:latest
-    ports: "3306:3306"
+    ports: 
+      - "3306:3306"
