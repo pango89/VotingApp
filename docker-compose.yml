@@ -12,3 +12,10 @@ services:
   redis:
     image: redis:alpine
     ports: ["6379"]
+
+  worker:
+    build: ./worker
+
+  db:
+    image: mysql/mysql-server:latest
+    ports: "3306:3306"
