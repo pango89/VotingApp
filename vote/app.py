@@ -30,7 +30,7 @@ def hello():
         vote = request.form['vote']
         data = json.dumps({'voter_id': voter_id, 'vote': vote})
         # redis.rpush('votes', data)
-        pubsub.publish('votes', data)
+        redis.publish('votes', data)
 
     resp = make_response(render_template(
         'index.html',
