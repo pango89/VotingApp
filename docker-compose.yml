@@ -15,18 +15,18 @@ services:
     image: redis:alpine
     ports: ["6379"]
 
-  worker:
-    build: ./worker
-    environment:      
-      - "ConnectionStrings:VoteData=Server=db;Port=3306;Database=votes;User=root;SslMode=None"
-    depends_on:
-      - redis
-      - db
+  # worker:
+  #   build: ./worker
+  #   environment:      
+  #     - "ConnectionStrings:VoteData=Server=db;Port=3306;Database=votes;User=root;SslMode=None"
+  #   depends_on:
+  #     - redis
+  #     - db
 
-  db:
-    image: mysql
-    ports: 
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD="password"
+  # db:
+  #   image: mysql
+  #   ports: 
+  #     - "3306:3306"
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD="password"
     
