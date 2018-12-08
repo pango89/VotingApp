@@ -31,7 +31,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql123
-      MYSQL_DATABASE: votes
   
   adminer:
     image: adminer
