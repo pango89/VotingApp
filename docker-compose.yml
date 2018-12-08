@@ -17,8 +17,8 @@ services:
 
   worker:
     build: ./worker
-    environment:      
-      - "ConnectionStrings:VoteData=Server=db;Port=3306;Database=votes;User=root;SslMode=None"
+    # environment:      
+    #   - "ConnectionStrings:VoteData=Server=db;Port=3306;Database=votes;User=root;SslMode=None"
     depends_on:
       - redis
       - db
@@ -28,5 +28,6 @@ services:
     ports: 
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD="password"
+      - MYSQL_ROOT_PASSWORD=mysql@123
+      - MYSQL_DATABASE=votes
     
